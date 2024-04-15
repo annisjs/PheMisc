@@ -4,12 +4,12 @@
 \alias{convert_snps}
 \title{Convert SNPs to ranges}
 \usage{
-convert_snps(snp_file, output_file, sleep_time)
+convert_snps(snps, output_file = NULL, sleep_time = 1)
 }
 \arguments{
-\item{output_file}{Output file of ranges}
-
 \item{snps}{list of SNPs. One per line.}
+
+\item{output_file}{Output file of ranges}
 }
 \description{
 Convert SNPs to ranges

@@ -4,7 +4,9 @@
 \alias{get_icd_codes}
 \title{Get ICD codes for PheWAS}
 \usage{
-get_icd_codes(table = "vdw_cardio_dbx_results_sd.all_mega_icd_codes_full")
+get_icd_codes(
+  table = "workspace_victr.phenotemplate_sd.all_mega_icd_codes_full"
+)
 }
 \arguments{
 \item{table}{databricks table that has grid, code, date, vocabulary_id, sex as columns}
