@@ -7,9 +7,12 @@
 #' @import xml2 stringr
 convert_snps <- function(snps,output_file,sleep_time)
 {
-  if (is.character(snps))
+  if (length(snps) == 1)
   {
-    snps <- readLines(snps)
+    if (file.exists(snps))
+    {
+        snps <- readLines(snps)
+    }
   }
   url <- stringr::str_glue("https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=SNP&id={snps}")
   df <- NULL
