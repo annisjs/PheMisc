@@ -38,5 +38,11 @@ convert_snps <- function(snps,output_file,sleep_time)
     }
   }
   df <- as.data.frame(df)
-  data.table::fwrite(df[,c("chr","pos","pos","snp_id")],output_file,sep = " ",col.names = F)
+  df <- df[,c("chr","pos","pos","snp_id")]
+  if (!is.null(output_file))
+  {
+    data.table::fwrite(df,output_file,sep = " ",col.names = F)
+  } else {
+    return(df)
+  }
 }
