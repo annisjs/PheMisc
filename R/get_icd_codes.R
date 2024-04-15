@@ -4,7 +4,7 @@
 #'
 #' @export
 #' @import DBI odbc stringr
-get_icd_codes <- function(table="vdw_cardio_dbx_results_sd.all_mega_icd_codes_full")
+get_icd_codes <- function(table="workspace_victr.phenotemplate_sd.all_mega_icd_codes_full")
 {
   conn = dbConnect(drv = odbc(), dsn = "Databricks")
   codes <- as.data.table(dbGetQuery(conn,str_glue("SELECT * FROM {table}")))
