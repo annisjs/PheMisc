@@ -5,7 +5,7 @@
 #'
 #' @export
 #' @import xml2 stringr
-convert_snps <- function(snps,output_file,sleep_time)
+convert_snps <- function(snps,output_file=NULL,sleep_time=1)
 {
   if (length(snps) == 1)
   {
