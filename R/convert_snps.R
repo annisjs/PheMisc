@@ -5,9 +5,12 @@
 #'
 #' @export
 #' @import xml2 stringr
-convert_snps <- function(snp_file,output_file,sleep_time)
+convert_snps <- function(snps,output_file,sleep_time)
 {
-  snps <- readLines(snp_file)
+  if (is.character(snps))
+  {
+    snps <- readLines(snps)
+  }
   url <- stringr::str_glue("https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=SNP&id={snps}")
   df <- NULL
   for (i in 1:length(snps)) {
