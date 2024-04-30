@@ -17,3 +17,5 @@ Imports:
   odbc,
   DBI,
   data.table
+Remotes:
+  PheWAS/PheWAS
