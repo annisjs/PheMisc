@@ -15,4 +15,5 @@ Imports:
   xml2,
   PheWAS,
   odbc,
-  DBI
+  DBI,
+  data.table
