@@ -9,10 +9,15 @@
 #' @importFrom stringr str_glue
 #'
 #' @export
-run_plink_unimputed <- function(snp_file,output_folder,bfile="/scratch/mega_data/unimputed_mega_data/MEGAv1-1_ALL")
+run_plink_unimputed <- function(snp_file,output_folder,bfile="/scratch/mega_data/unimputed_mega_data/MEGAv1-1_ALL",run_in_curent_dir=F)
 {
   output_file_name <- strsplit(basename(snp_file),"[.]")[[1]][1]
-  cmd <- str_glue("plink --recodeA --bfile {bfile} --out {output_folder}/{output_file_name} --extract {snp_file} -d !")
+  if (run_in_curent_dir)
+  {
+    cmd <- str_glue("./plink --recodeA --bfile {bfile} --out {output_folder}/{output_file_name} --extract {snp_file} -d !")
+  } else {
+    cmd <- str_glue("plink --recodeA --bfile {bfile} --out {output_folder}/{output_file_name} --extract {snp_file} -d !")
+  }
   system(cmd)
 }
 
