@@ -55,7 +55,7 @@ rph <- function(codes,genotypes,output_file,n_cores,additive.genotypes,subset1)
     }
     print("Running PheWAS")
     genotypes[,2:ncol(genotypes)] <- apply(genotypes[2:ncol(genotypes)],2,hardcall)
-    gender_restriction <<- PheWAS::gender_restriction
+    gender_restriction <<- PheWAS::sex_restriction
     phenotypes <- PheWAS::createPhenotypes(code_count, aggregate.fun=sum, id.sex=dem)
     results <- PheWAS::phewas(phenotypes=phenotypes,genotypes=genotypes,significance.threshold=c("bonferroni"),cores=as.numeric(n_cores),
                       additive.genotypes = additive.genotypes)
